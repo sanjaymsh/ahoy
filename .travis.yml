@@ -1,18 +1,31 @@
 dist: bionic
-arch: 
-   - amd64
-   - ppc64le
 language: ruby
 jobs:
   include:
     - rvm: 2.7
       gemfile: Gemfile
+      arch: amd64
     - rvm: 2.6
       gemfile: test/gemfiles/rails52.gemfile
+      arch: amd64
     - rvm: 2.5
       gemfile: test/gemfiles/rails51.gemfile
+      arch: amd64
     - rvm: 2.4
       gemfile: test/gemfiles/rails50.gemfile
+      arch: amd64
+    - rvm: 2.7
+      gemfile: Gemfile
+      arch: ppc64le
+    - rvm: 2.6
+      gemfile: test/gemfiles/rails52.gemfile
+      arch: ppc64le
+    - rvm: 2.5
+      gemfile: test/gemfiles/rails51.gemfile
+      arch: ppc64le
+    - rvm: 2.4
+      gemfile: test/gemfiles/rails50.gemfile
+      arch: ppc64le
 addons:
   postgresql: 10
 services:
